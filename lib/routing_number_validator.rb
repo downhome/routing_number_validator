@@ -1,7 +1,9 @@
 class RoutingNumberValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
+    value = value.to_s.gsub(/[^\d]/, '')
+
     if value.blank? || value.to_s.size != 9
-      record.errors[attribute] << (options[:message] || "must be 9 digits long")
+      record.errors[attribute] << (options[:message] || "routing number must be 9 digits long")
     elsif !valid_routing_number?(value)
       record.errors[attribute] << (options[:message] || "invalid routing number. Failed checksum.")
     end
