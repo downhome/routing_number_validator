@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |s|
   s.name          = "routing_number_validator"
-  s.version       = "0.1.2"
+  s.version       = "0.1.3"
   s.authors       = ["Maher Hawash"]
   s.email         = ["gmhawash@gmail.com"]
 
